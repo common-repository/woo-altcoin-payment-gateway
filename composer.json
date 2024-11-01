@@ -1,0 +1,40 @@
+{
+    "name": "coinmarketstats/woo-commerce_alt-coin_payment_gateway",
+    "description": "woocommerce altcoin payment gateway",
+    "type": "composer-plugin",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "CoinMarketStats",
+            "email": "info@coinmarketstats.online"
+        }
+    ],
+    "scripts": {
+        "build" : "composer install --no-dev",
+        "phpcs" : "php ./vendor/bin/phpcs -i ",
+        "phpcsCheckError" : "php ./vendor/bin/phpcs --standard=WordPress ./core ./woocommerce-altcoin-payment.php",
+        "phpcsFixError" : "php ./vendor/bin/phpcbf --standard=WordPress ./core ./woocommerce-altcoin-payment.php",
+        "phpcsCheckPHPDetail" : "php ./vendor/bin/phpcs --standard=PHPCompatibilityWP -p ./core --runtime-set testVersion 7.0-"
+    },
+    "autoload": {
+        "psr-4" : {
+            "WooGateWayCoreLib\\" : "core/"
+        }
+    },
+    "require": {
+        "php" : ">=7.0.0"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "dev-master",
+        "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "tuhin18003/advance-var-dumper": "dev-master"
+    }
+}
